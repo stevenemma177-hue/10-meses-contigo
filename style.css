@@ -1,0 +1,282 @@
+body {
+  margin: 0;
+  overflow: hidden; /* quita scroll mientras está el candado */
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #ffe6f0 0%, #ffd1e8 100%);
+  min-height: 100vh;
+}
+
+#pantalla-candado {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: linear-gradient(180deg, #ffe6f0 0%, #ffd1e8 100%);
+  display: flex; justify-content: center; align-items: center;
+  z-index: 9999;
+}
+
+.candado-contenedor h2 {
+  color: #ff4da6;
+  font-size: 28px;
+  text-shadow: 0 2px 8px rgba(255,77,166,0.3);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* CONTENEDOR PARA ENDEREZAR TODO */
+.candado-contenedor {
+  text-align: center;
+}
+
+.candado {
+  width: 300px;
+  height: 270px;
+  margin: 0 auto 30px;
+  position: relative;
+  /* CORAZÓN SVG DE FONDO - nunca falla */
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='url(%23grad)' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23ff80bf'/%3E%3Cstop offset='100%25' stop-color='%23ff4da6'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E") no-repeat center;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.arco {
+  position: absolute;
+  top: -30px;
+  width: 100px;
+  height: 60px;
+  border: 15px solid #ff80bf;
+  border-bottom: none;
+  border-radius: 50px 50px 0 0;
+}
+
+.ruedas {
+  display: flex;
+  gap: 15px;
+  z-index: 2;
+}
+
+.flecha {
+  background: #ff4da6;
+  color: white;
+  border: none;
+  width: 35px; height: 30px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 3px;
+}
+
+.numero {
+  background: white;
+  color: #ff4da6;
+  width: 55px; height: 55px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; font-weight: bold;
+}
+
+.btn-desbloquear {
+  background: white;
+  color: #ff4da6;
+  border: none;
+  padding: 14px 35px;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 25px; /* AGREGA ESTA LÍNEA */
+  box-shadow: 0 8px 20px rgba(255,77,166,0.3);
+  transition: 0.3s;
+}
+
+.pista {
+  color: #ff4da6;
+  font-size: 14px;
+  text-align: center;
+}
+
+.error {
+  color: red;
+  display: none;
+  margin-top: 10px;
+  text-align: center;
+}
+
+#contenido-principal {
+  display: none; /* oculto hasta desbloquear */
+  padding: 20px 20px 60px 20px;
+  overflow-y: auto;
+  height: 100vh;
+  max-width: 600px;
+  margin: 0 auto;
+}
+#contenido-principalh2{
+  text-align: center;
+  color: #ff4da6;
+  font-family:'pacifico', cursive;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.timeline {
+  max-width: 600px;
+  margin: 50px auto;
+}
+
+.mes {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.mes img {
+  width: 100%;
+  height: 520px; 
+  object-fit: cover;
+  border-radius: 15px;
+  margin: 15px 0;
+}
+
+.mes:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+/* CARTAS ARREGLADAS */
+.carta {
+  background: white;
+  border-radius: 15px;
+  margin: 15px auto;
+  box-shadow: 0 8px 25px rgba(255,77,166,0.2);
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.3s;
+  max-width: 500px;
+}
+
+.carta:hover {
+  transform: translateY(-3px);
+}
+
+.sobre {
+  background: linear-gradient(135deg, #ff80bf, #ff4da6);
+  color: white;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.contenido-carta {
+  display: none;
+  padding: 20px;
+  text-align: center;
+}
+
+
+/* Imágenes de las cartas */
+.contenido-carta img {
+  width: 100%;          /* ocupa todo el ancho de la carta */
+  max-width: 400px;     /* pero máximo 400px pa que no se pixelee */
+  height: auto;         /* mantiene la proporción, no se deforma */
+  border-radius: 15px;  /* esquinas redonditas bonitas */
+  margin: 15px auto;    /* espacio arriba/abajo y centrada */
+  display: block;       /* pa que el margin auto funcione */
+  box-shadow: 0 4px 15px rgba(255, 182, 193, 0.4); /* sombrita rosa suave */
+  object-fit: cover;    /* si recortas, que se vea bien */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+}
+.contenido-carta img:hover{
+  transform: scale(1.05);
+ box-shadow: 0 8px 25px rgba(255,105,180, 0.6);
+}
+/* Pa celular */
+@media (max-width: 600px) {
+  .contenido-carta img {
+    max-width: 90%;     /* en cel que ocupe 90% nomás */
+    border-radius: 12px;
+  }
+}
+
+/* Extra: que el texto no quede pegado a la imagen */
+.contenido-carta p {
+  padding: 0 10px;
+  line-height: 1.6;
+}
+
+.contenido-carta p {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.btn-cerrar {
+  background: #ff4da6;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* CUANDO ESTÁ ABIERTA */
+.carta.abierta .sobre {
+  display: none;
+}
+
+.carta.abierta .contenido-carta {
+  display: block;
+  animation: abrirCarta 0.5s ease;
+}
+
+@keyframes abrirCarta {
+ 0% { opacity: 0; transform: translateY(-20px); }
+ 100% { opacity: 1; transform: translateY(0); }
+}
+html {
+  scroll-behavior: auto; /* quita el scroll suave automático del navegador */
+
+}
+
+.carta {
+  scroll-margin-top: 0; /* evita que el navegador haga jump */
+  border: 2px solid transparent;
+  background: linear-gradient(white, white)padding-box
+              linear-gradient(45deg, #ffb6c1, #ff69b4, #ffb6c1);
+              transition: all 0.3 ease;
+}
+body {
+  background: linear-gradient(135deg, #ffe6f0 0%, #fff5fa 100%);
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '❤️ 💕 🌹 ✨';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 2rem;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: -1;
+  animation: flotar 20s linear infinite;
+}
+
+@keyframes flotar {
+  0% { transform: translateY(0) rotate(0deg); }
+ 100% { transform: translateY(-100vh) rotate(360deg); }
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>10 Meses Contigo ❤️</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- PASO 1: CANDADO CORAZÓN ROSADO 3D -->
+  <div id="pantalla-candado">
+    <div class="candado-contenedor">
+      
+      <h2>Ingresa la fecha correcta...</h2>
+
+     <div class="candado">
+  <div class="arco"></div>
+  
+  <div class="ruedas">
+    <!-- DÍA -->
+    <div>
+      <button onclick="cambiar('dia', 1)" class="flecha">▲</button>
+      <div id="dia" class="numero">27</div>
+      <button onclick="cambiar('dia', -1)" class="flecha">▼</button>
+    </div>
+
+    <!-- MES -->
+    <div>
+      <button onclick="cambiar('mes', 1)" class="flecha">▲</button>
+      <div id="mes" class="numero">09</div>
+      <button onclick="cambiar('mes', -1)" class="flecha">▼</button>
+    </div>
+ 
+    <!-- AÑO -->
+    <div>
+      <button onclick="cambiar('anio', 1)" class="flecha">▲</button>
+      <div id="anio" class="numero">25</div>
+      <button onclick="cambiar('anio', -1)" class="flecha">▼</button>
+    </div>
+  </div>
+
+  <button onclick="verificarCandado()" class="btn-desbloquear">Desbloquear ❤️</button>
+</div>
+
+      <p class="pista">Pista: La fecha en la que nos hicimos novios🥰</p>
+      <p id="error-candado" class="error">Esa no es amorcito... intenta otra vez 🥺</p>
+    </div>
+  </div> <!-- CIERRE DEL CANDADO -->
+
+  <div id="contenido-principal" style="display:none;">
+  <h2>10 Meses Contigo ❤️</h2>
+  
+  <div class="carta" onclick="abrirCarta(this)">
+  <div class="sobre">💌Mes 1- click para abrir</div>
+  <div class="contenido-carta">
+    <img src="fotos.jpg.jpeg" alt="Nuestro amor floreciendo">
+
+<p> No sabía que una sonrisa podía cambiarme la vida♥️♥️🥹.
+ Ese primer mes contigo mi corazón aprendió a latir diferente. ❤️‍🔥
+ Como una flor que abre sus pétalos al sol🌹, así floreció mi amor por ti. Sin apuros, sin miedo...
+  solo tú y yo descubriéndonos.
+ </p>
+    </div>
+    </div>
+  
+  <div class="carta" onclick="abrirCarta(this)">
+  <div class="sobre">💌Mes 2- click para abrir</div>
+  <div class="contenido-carta">
+    <img src="fotos1.jpg.jpeg" alt="Amor inigualable">
+      
+<p>Si el mes 1 floreció mi corazón,💖😍
+ el mes 2 entendí que lo tuyo no tiene copia.
+  No hay otra risa igual a la tuya, ni otra forma de abrazar que me calme igual.
+   Descubrí que mi amor por ti es inigualable...🥹❤️‍🔥♥️
+    porque tú eres mi única medida.  </p>
+    </div>
+  </div>
+    <div class="carta" onclick="abrirCarta(this)">
+  <div class="sobre">💌Mes 3- click para abrir</div>
+  <div class="contenido-carta">
+    <img src="fotos2.jpg.jpeg" alt="Lealtad pura">
+<p>En el mes 3 entendí que contigo no hay dudas.🌹🥰
+ Tu lealtad se volvió mi lugar seguro: en las risas, en los días grises, en todo. 
+ Supe que mi corazón podía descansar en ti💞, porque tu amor no se mueve,
+  no se negocia, no se quiebra. Lealtad pura, la tuya. </p>
+    </div>
+    </div>
+<div class="carta" onclick="abrirCarta(this)">
+  <div class="sobre">💌Mes 4- click para abrir</div>
+  <div class="contenido-carta">
+    <img src="fotos3.jpg.jpeg" alt="Seguridad y confianza">
+      <p>Mes 4: Seguridad y confianza  
+Llegó el mes 4 y contigo entendí qué es la paz 🕊️. Me diste seguridad cuando dudaba,
+ y confianza cuando el mundo pesaba 🤝. Contigo no h
+ ay miedo a ser yo, porque sé que tus brazos son mi casa y tu
+  palabra mi refugio 🏠❤️. En ti encontré el lugar donde mi corazón d
+  uerme tranquilo 😴✨ </p>
+    </div> 
+</div>
+   <div class="carta" onclick="abrirCarta(this)">
+  <div class="sobre">💌Mes 5- click para abrir</div>
+  <div class="contenido-carta">
+    <img src="fotos4.jpg.jpeg" alt="Amor verdadero">
+      <p>Mes 5: Amor verdadero  
+Si los meses pasados fueron promesas, el mes 5 fue la verdad 💎. Amor verdadero es el tuyo: el que se queda en mis días grises ☁️, el que celebra mis victorias sin envidia 🎉, el que me elige en mis peores versiones 🥺❤️. Contigo entendí que el amor real no grita, solo se queda... y tú te quedaste conmigo 💍✨
+</p>
+    </div>
+   </div>
+    <div class="carta" onclick="abrirCarta(this)">
+  <div class="sobre">💌Mes 6- click para abrir</div>
+  <div class="contenido-carta">
+      <img src="fotos5.jpg.jpeg" alt="Una nueva Etapa">
+      <p>Mes 6: Una nueva etapa  
+El mes 6 marcó el inicio de algo más grande 🌅. Dejamos atrás el "nos estamos conociendo" y abrimos la puerta a "construyamos juntos" 🔑❤️. Una nueva etapa donde los planes ya tienen 2 nombres, donde los sueños se comparten y el futuro se escribe a dúo 📝✨. Contigo, cada etapa nueva se siente como la mejor 💫
+</p>
+    </div>
+    </div>
+    <div class="carta" onclick="abrirCarta(this)">
+  <div class="sobre">💌Mes 7- click para abrir</div>
+  <div class="contenido-carta">
+      <img src="fotos6.jpg.jpeg" alt="Amor intenso">
+      <p>Mes 7: Amor intenso  
+Llegó el mes 7 y el amor dejó de susurrar para gritar 🌪️. Amor intenso es el tuyo: el que acelera mi pulso cuando llegas 💓, el que quema en cada abrazo que no quiero soltar 🫂🔥, el que me hace sentir vivo hasta en un simple "buenos días" ☀️. Contigo el amor no es tibio... arde, prende, y se queda encendido por ti ⚡💋 </p>
+    </div>
+    </div>
+    <div class="carta" onclick="abrirCarta(this)">
+  <div class="sobre">💌Mes 8- click para abrir</div>
+  <div class="contenido-carta">
+      <img src="fotos7.jpg.jpeg" alt="Juntos por siempre">
+      <p>Mes 8: Juntos por siempre  
+El mes 8 me enseñó que el tiempo contigo no cuenta horas, cuenta eternidad ⏳❤️. Ya no imagino mi futuro sin tu risa, sin tu mano, sin tus planes ♾️. Juntos por siempre no es promesa bonita... es decisión diaria que tomo cuando elijo despertarme pensando en ti 🌅🥰. Mi siempre empezó el día que dijiste "sí" 💫 </p>
+    </div>
+    </div>
+    <div class="carta" onclick="abrirCarta(this)">
+  <div class="sobre">💌Mes 9- click para abrir</div>
+  <div class="contenido-carta">
+      <img src="fotos8.jpg.jpeg" alt="Nunca me alejare de ti">
+      <p>Mes 9: Nunca me alejaré de ti  
+Si 8 meses me bastaron pa saberlo, este mes 9 me bastó pa jurarlo 🤝❤️. Pase lo que pase, venga lo que venga, mi lugar siempre va a estar a tu lado 🛤️. Nunca me alejaré de ti ni en mis días malos, ni cuando la vida pese 🌧️➡️☀️. Mi promesa es simple: tú + yo, siempre cerca, siempre juntos, hasta que el tiempo se canse de nosotros 💍♾️
+ </p>
+    </div>
+    </div>
+    <div class="carta" onclick="abrirCarta(this)">
+  <div class="sobre">💌Mes 10- click para abrir</div>
+  <div class="contenido-carta">
+      <img src="fotos9.jpg.jpeg" alt="Felicidad pura">
+      <p>Mes 10: Felicidad pura  
+10 meses contigo y entendí que la felicidad no es un destino... eres tú 🎯❤️. Felicidad pura es reírme de tus bobadas a las 3am 😂, es tu abrazo después de un día pesado 🫂, es ver tu nombre en mi cel y que el día se arregle 📱💛. Contigo hasta lo simple se vuelve mágico, porque tu risa es mi lugar feliz 🌈✨ </p>
+    </div>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
